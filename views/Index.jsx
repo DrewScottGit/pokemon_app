@@ -2,12 +2,12 @@ const React = require('react');
 
 class Index extends React.Component {
     render(){
-        
+        const { sample } = this.props;
         return (
             <div>
            
             <ul>
-                {this.props.pokemon.map((item, i)=>{
+                {sample.map((item, i)=>{
                     return (
                         <h2>
                             <a href={`/pokemon/${item,i}`}>

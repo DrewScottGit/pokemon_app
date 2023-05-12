@@ -22,7 +22,7 @@ app.get('/', function(req,res){
 })
 
 app.get('/pokemon/', function(req,res){
-    res.render('Index', {pokemon: pokemon})
+    res.render('Index', { sample : pokemon})
 })
 
 app.get('/pokemon/:id', (req,res) =>{
