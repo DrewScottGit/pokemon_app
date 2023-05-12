@@ -10,6 +10,11 @@ const port = 3000
 
 const pokemon = require('./models/pokemon.js');
 
+// middleware
+
+app.set('view engine', 'jsx');
+app.engine('jsx', require('jsx-view-engine').createEngine());
+
 // routes
 
 app.get('/', function(req,res){
@@ -17,7 +22,11 @@ app.get('/', function(req,res){
 })
 
 app.get('/pokemon/', function(req,res){
-    res.send(pokemon)
+    res.render('Index', {pokemon: pokemon})
+})
+
+app.get('/pokemon/:id', (req,res) =>{
+    res.render ('Show', { pokemon: pokemon[req.params.id]})
 })
 
 
